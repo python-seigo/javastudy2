@@ -1,13 +1,23 @@
-name: Testing Spring Boot Code On Github Actions
+name: Java CI with Gradle
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
 
 jobs:
-  test:
-    runs-on: ubuntu-22.04
+  build:
+
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - run: docker-compose up --abort-on-container-exit
+    - uses: actions/checkout@v3
+    - name: Set up JDK 18
+      uses: actions/setup-java@v3
+      with:
+        java-version: '18'
+        distribution: 'temurin'
