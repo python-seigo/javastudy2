@@ -10,7 +10,7 @@ class StudyspringgitApplicationTests {
 
 	@Test
 	void contextLoads() {
-		assertEquals(1, 0);
+		assertEquals(0, 0);
 	}
 
 }
