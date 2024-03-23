@@ -12,5 +12,5 @@ jobs:
       uses: gradle/gradle-build-action@v3
     - name: Make gradlew executable
       run: chmod +x ./gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: Run tests with Gradle
+      run: ./gradlew test
