@@ -1,17 +1,13 @@
-name: Build Gradle project
+name: Testing Spring Boot Code On Github Actions
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
-  build-gradle-project:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-22.04
     steps:
-    - name: Checkout project sources
-      uses: actions/checkout@v4
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-    - name: Make gradlew executable
-      run: chmod +x ./gradlew
-    - name: Run build with Gradle Wrapper
-      run: ./gradlew build
+      - uses: actions/checkout@v2
+      - run: docker-compose up --abort-on-container-exit
