@@ -21,3 +21,4 @@ jobs:
       with:
         java-version: '18'
         distribution: 'temurin'
+        run: ls -la
